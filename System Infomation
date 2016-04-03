@@ -1,0 +1,14 @@
+1. Kill process who is listen on port 3000
+   fuser -k -n tcp 3000
+
+2. netstat
+  2.a Find ports netstat with the associated Process
+      netstat -tulpn
+  2.b Find ports at Listen state
+      netstat --listen
+      
+3. ngrep
+  3.a Get messages from host 
+      ngrep -q -n100 -Wbyline "" "src host a.b.c.d"
+  3.b Get messages to host with protocol
+      ngrep -n100 'keyword' -Wbyline -q udp port [port] and dst host a.b.c.d
