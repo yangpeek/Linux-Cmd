@@ -1,2 +1,5 @@
 1. Print text block if seached text in the block.
 perl -l -0777 -ne 'for (m{------------------------------------------------------------------------.*?------------------------------------------------------------------------}gs) {print if /mobile {/}' sniffer_rsp > sniffer_rsp_mobile
+
+2. Sum column alias:
+awk '{s+=$0} END {print s}'
