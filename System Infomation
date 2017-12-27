@@ -15,3 +15,6 @@
 
 4. start service and no hungup 
    hungup command1 >> log_file 2>&1 &
+
+5. find and xargs (This is modified for Mac, since mv -t is not supported in Mac...)
+   find . -name "*.bsh" | xargs -I{} mv '{}' ./copy_newbox/
