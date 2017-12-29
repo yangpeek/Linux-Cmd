@@ -3,3 +3,7 @@ perl -l -0777 -ne 'for (m{------------------------------------------------------
 
 2. Sum column alias:
 awk '{s+=$0} END {print s}'
+
+3. Vim Add / Remove comment for text block:
+:10,100s/^/#/
+:10,100s/^#//
