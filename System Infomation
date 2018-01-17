@@ -18,3 +18,6 @@
 
 5. find and xargs (This is modified for Mac, since mv -t is not supported in Mac...)
    find . -name "*.bsh" | xargs -I{} mv '{}' ./copy_newbox/
+
+6. curl connection time report
+   curl -w '\nLookup time:\t%{time_namelookup}\nConnect time:\t%{time_connect}\nPreXfer time:\t%{time_pretransfer}\nStartXfer time:\t%{time_starttransfer}\n\nTotal time:\t%{time_total}\n' -o /dev/null -s http://linux.com/
