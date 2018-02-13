@@ -21,3 +21,9 @@
 
 6. curl connection time report
    curl -w '\nLookup time:\t%{time_namelookup}\nConnect time:\t%{time_connect}\nPreXfer time:\t%{time_pretransfer}\nStartXfer time:\t%{time_starttransfer}\n\nTotal time:\t%{time_total}\n' -o /dev/null -s http://linux.com/
+
+7. network inbound Kbps and outbound Kbps
+   ifstat -b
+   
+8. network speed limitation
+   sudo ethtool eth0 | grep Speed
