@@ -32,4 +32,8 @@
    perf record -a --call-graph -p some_pid
    perf report --call-graph --stdio
 
-10. dpkg -l | grep "pkg_name"
+10. find package installed information
+    dpkg -l | grep "pkg_name"
+
+11. find linked dynamic lib for the bin.
+    ldd bin
