@@ -31,3 +31,5 @@
 9. perf call graph
    perf record -a --call-graph -p some_pid
    perf report --call-graph --stdio
+
+10. dpkg -l | grep "pkg_name"
