@@ -8,3 +8,6 @@ awk '{s[$1]+=$3}END{for(i in s){print i, s[i]}}' file.txt
 3. Vim Add / Remove comment for text block:
 :10,100s/^/#/
 :10,100s/^#//
+
+4. Looping file lines:
+cat a | while read line; do grep "$line" a.file; done
