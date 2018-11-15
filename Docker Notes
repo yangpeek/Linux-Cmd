@@ -10,3 +10,4 @@
    5.8.  docker images                // list all docker images
    5.9.  docker rmi image_id          // remove a docker image
    5.10. docker rm -v $(docker ps -a -q -f status=exited)  // remove all exited docker containers
+   5.11. docker system prune          // prune all dangling images, containers, network, etc
