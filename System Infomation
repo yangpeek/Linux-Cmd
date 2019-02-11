@@ -37,3 +37,6 @@
 
 11. find linked dynamic lib for the bin.
     ldd bin
+    
+12. Find which process associated with which core:
+    top -H -p {PROC_ID}
