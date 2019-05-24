@@ -29,8 +29,8 @@
    sudo ethtool eth0 | grep Speed
 
 9. perf call graph
-   perf record -a --call-graph -p some_pid
-   perf report --call-graph --stdio
+   perf record -a --call-graph dwarf -p some_pid
+   perf report --call-graph --stdio -G
 
 10. find package installed information
     dpkg -l | grep "pkg_name"
