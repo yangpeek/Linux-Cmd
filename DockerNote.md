@@ -11,6 +11,8 @@
    *  docker images                // list all docker images
    *  docker rmi image_id          // remove a docker image
    * docker rm -v $(docker ps -a -q -f status=exited)  // remove all exited docker containers
+   * docker stop $(docker ps -a -q)
+   * docker rm $(docker ps -a -q)
    * docker system prune          // prune all dangling images, containers, network, etc
 
 ### 1. AWS command support:
