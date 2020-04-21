@@ -15,9 +15,9 @@
    * docker rm $(docker ps -a -q)
    * docker system prune          // prune all dangling images, containers, network, etc
 
-### 1. AWS command support:
+### 1. Docker Tools:
 
-#####  1.1 eb cli docker container
+##### 1.1 eb cli docker container
   
    * all documents to install eb cli on-line almost not good)
    * https://hub.docker.com/r/paulodiovani/aws-eb-cli/
@@ -26,3 +26,9 @@
    ```   
    * eb init 
    * eb XXX
+   
+### 1.2 avro-cli coker container
+
+   ```
+   docker run -v `pwd`:/share coderfi/avro-tools tojson --pretty /share/${file} > ${file}.json
+   ```
