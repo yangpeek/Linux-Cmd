@@ -40,3 +40,6 @@
     
 12. Find which process associated with which core:
     top -H -p {PROC_ID}
+
+13. For loop to set up bidder hostnames
+for bidder in `cat pao-bidder-good`; do echo -n "working on: " $bidder; ssh -oStrictHostKeyChecking=no yang.yang@${bidder}.sjc "sudo hostname ${bidder}.sjc.mmracks.internal && hostname -f && sleep 2"; done
