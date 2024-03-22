@@ -9,3 +9,4 @@
 - kubectl get pods
 - kubectl get services
 - kubectl describe po ${pods}
+- kubectl get cm bidder -oyaml # cm -> ConfigMap
