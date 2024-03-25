@@ -16,3 +16,8 @@
   ```
   helm upgrade --install router deployments/charts/router  --cleanup-on-fail --values deployments/charts/router/values.yaml --set image.tag=2.28.3-b4036
   ```
+
+5. Asset db:
+   ```
+   curl "https://asset.mediamath.com/ajax/hostname/os_version?pop=sjc&hostname=biddex&format=text&max_age=1"
+   ```
