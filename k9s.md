@@ -10,3 +10,9 @@
 - kubectl get services
 - kubectl describe po ${pods}
 - kubectl get cm bidder -oyaml # cm -> ConfigMap
+
+4. k8s deployment:
+- BF:
+  ```
+  helm upgrade --install router deployments/charts/router  --cleanup-on-fail --values deployments/charts/router/values.yaml --set image.tag=2.28.3-b4036
+  ```
