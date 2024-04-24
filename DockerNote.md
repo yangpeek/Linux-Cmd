@@ -32,3 +32,6 @@
    ```
    docker run -v `pwd`:/share coderfi/avro-tools tojson --pretty /share/${file} > ${file}.json
    ```
+
+### Docker run image with different entry point
+  * docker run --rm -it --entrypoint bash core-shield-dev
