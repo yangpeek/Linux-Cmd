@@ -35,3 +35,6 @@
 
 ### Docker run image with different entry point
   * docker run --rm -it --entrypoint bash core-shield-dev
+
+### Docker check processes:
+  * docker exec -it ingestbidderd supervisorctl
