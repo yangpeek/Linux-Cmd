@@ -13,6 +13,8 @@
 - kubectl edit sts iad-udbshield-0
   - args: ["3600"]
   - command: ["/bin/sleep"]
+- kubectl --context=yayang-prd.iad.co.mediamath.com -n media-relayer get cm
+- kubectl config get-contexts
 
 ```
 curl -X POST -H 'Accept: */*' -H 'Accept-Encoding: gzip, deflate' -H 'Connection: keep-alive' -H 'Content-Length: 820' -H 'Content-Type: application/json' -H 'User-Agent: python-requests/2.24.0' -H 'x-mm-prodmon-tags: test_id=116;strategy_id=13817511;task_id=41' -H 'x-mm-skip-bff: 1' -H 'x-openrtb-version: 2.5' -d '{"id": "b2f7933b-0cf9-4092-b3e0-1025b9ddf191", "cur": "USD", "at": 1, "imp": [{"id": "727edaca-f83c-41b9-a88b-11d8ebbe8b01", "bidfloor": 0.1, "bidfloorcur": "USD", "banner": {"w": 300, "h": 250}}], "site": {"id": "621949166", "domain": "prodmon.mediamath.com", "page": "http://prodmon.mediamath.com?task_id=41&test_id=116&test_type=Development", "publisher": {"id": "160447572"}}, "user": {"buyeruid": "d6a6f55b-754d-4012-8824-ef4bfec188d2"}, "device": {"ip": "24.2.117.33", "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 [FBAN/FBIOS;FBDV/iPhone11,2;FBMD/iPhone;FBSN/iOS;FBSV/12.2;FBSS/3;FBCR/AT&T;FBID/phone;FBLC/en_US;FBOP/5]", "geo": {"country": "US", "region": "NY", "city": "Manhattan", "zip": "10007", "type": 2}}, "ext": {"ssp": "ss-prodmon"}}' http://bidding-test.cloud.mathtag.com:9180/bid/gor
