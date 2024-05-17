@@ -54,3 +54,9 @@ kubectl describe sts iad-udbshield
 - deploy to test environment for checking.
 - update services be cloud running, like log and ping endpoint.
 - develop test cases
+
+8. Kafka operator examples:
+- https://github.com/knative/docs/tree/1613b37e3599591eced322f5fb3b2129720bf3ae/docs/eventing/sources/kafka-source
+- https://github.com/strimzi/strimzi-kafka-operator/tree/main/examples/kafka
+- https://github.com/vszal/kubernetes-engine-samples/tree/c6f85f550a5d93a31f8c0831958165cb72646bb8/streaming/kafka-strimzi/manifests
+- 
