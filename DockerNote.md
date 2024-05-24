@@ -4,6 +4,7 @@
    *  eval "$(docker-machine env default)" // set docker machine environment virable
    *  docker build -t TAG -f Dockerfile . // build docker image
    *  docker run -tid image_id     // start a docker container
+   *  docker run -it --entrypoint=/bin/bash $IMAGE -i   // start a container with bash entry
    *  docker exec -it TAG / id bash // get into container 
    *  docker stop container_id     // stop docker container
    *  docker ps | docker ps -a     // list all docker containers
