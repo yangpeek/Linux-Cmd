@@ -70,3 +70,8 @@ kubectl describe sts iad-udbshield
   ```
   kcat -C  -b dca-bidder-kafka-bootstrap:9092 -t dca.bidder.caerus.1 -m 10 -f '%k %s\n' -s key=s -s value=avro -r http://dca-bidder-schema-registry:8081
   ```
+
+- k8s sso login:
+  ```
+  aws sso login --profile mm-bidder --no-browser
+  ```
