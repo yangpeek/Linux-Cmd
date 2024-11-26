@@ -17,3 +17,11 @@
    - knife vault update certificates yytt --clients iad-bidder-x3,iad-bidder-x2 --admins mozek --mode client
    - https://www.dhruvsahni.com/quick-guide-to-chef-vault
    - `--mode client` or upload / download could work.
+
+3. Chef broken repo cci for kitchen fix:
+   - [Example pr](https://github.com/MediaMath/bidmon/pull/42/files)
+   - Update `gem install rubocop-ast` for install gems.
+   - Update `fetch https://cci-chef.mediamath.com` b/c iad-chef is blocked for cci.
+   - Update Berksfile & Policyfile for source be `cci-chef`, so that we can get souce successfully.  
+   - Update `debian/9/chefdk` version to bypass the docker api version issue.
+   - Update workflow context with -chef to make sure the pem & config.rb environment viriable is set properly. 
