@@ -15,3 +15,17 @@
   ```
   kcat -C  -b dca-bidder-kafka-bootstrap:9092 -t dca.bidder.caerus.1 -m 10 -f '%k %s\n' -s key=s -s value=avro -r http://dca-bidder-schema-registry:8081
   ```
+
+3. Create kafka topic:
+   ```
+   1. Broker: kafka.x.x.x.com:9092
+   2. Replication-factor 1
+   3. Partitions 3
+   4. Topic name: x.x.x.1
+   5. Compact: No
+   6. Size: 1G disk ( 15qps * 60s * 1MB ) 
+   7. Retention: 1 min
+   8. segment.bytes=134217728 ( 1G / 8 )
+   
+   bin/kafka-topics.sh --create --topic x.x.x.1 --partitions 3 --replication-factor 1 --config segment.bytes=134217728 -config retention.ms=60000 --config retention.bytes=1073741824 --bootstrap-server kafka.x.x.x.com:9092
+   ```
