@@ -29,3 +29,7 @@
    
    bin/kafka-topics.sh --create --topic x.x.x.1 --partitions 3 --replication-factor 1 --config segment.bytes=134217728 -config retention.ms=60000 --config retention.bytes=1073741824 --bootstrap-server kafka.x.x.x.com:9092
    ```
+4. Alter Topic Config:
+   ```
+   ./kafka-configs.sh --bootstrap-server x:9092  --entity-type topics --entity-name x --alter --add-config 'min.insync.replicas=1'
+   ```
