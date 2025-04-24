@@ -16,6 +16,10 @@
   kcat -C  -b dca-bidder-kafka-bootstrap:9092 -t dca.bidder.caerus.1 -m 10 -f '%k %s\n' -s key=s -s value=avro -r http://dca-bidder-schema-registry:8081
   kcat -b kafka.iad.changes.mediamath.com:9092 -t iad.opto.dba.pacing.1 -o 110055285 -p 0 -c1 -f '%k %s %T\n' -s key=bbbbbs -s value=avro -r https://api-internal-iad.mediamath.com/changes/schema_registry/
   ```
+- consume for changes:
+  ```
+  kcat  -b kafka.iad.changes.mediamath.com:9092 -t iad.changes.snapshot.audience-segments.1  -r https://api-internal-iad.mediamath.com/changes/schema_registry/ -p4 -o begenning  -svalue=avro -skey=avro -e -f '%p %o %T %k %s\n'
+  ```
 
 3. Create kafka topic:
    ```
