@@ -1,7 +1,12 @@
 1.Get into the namespace
 - k9s -n core-config-server --context yayang-prd.iad.co.mediamath.com
 
-2. k8s get information:
+2. k8s context:
+- kubectl config use-context aws/mm-mediamath/us-east-1/iks-mediamath-1
+- kubectl config get-contexts
+- kubectl config set-context --current --namespace=<namespace-name>
+
+3. k8s get information: 
 - kubectl get pods
 - kubectl get services
 - kubectl describe po ${pods}
@@ -14,7 +19,6 @@
   - args: ["3600"]
   - command: ["/bin/sleep"]
 - kubectl --context=yayang-prd.iad.co.mediamath.com -n media-relayer get cm
-- kubectl config get-contexts
 - kubectl exec --stdin --tty dca-bidder-0 -c bidder -- /bin/bash
 - kubectl get pods -o wide --sort-by="{.spec.nodeName}"
 - kubectl edit deployment, to change the docker entry point for manually troubleshoot
