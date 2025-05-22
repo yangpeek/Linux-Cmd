@@ -15,7 +15,9 @@
   ```
   kcat -C  -b dca-bidder-kafka-bootstrap:9092 -t dca.bidder.caerus.1 -m 10 -f '%k %s\n' -s key=s -s value=avro -r http://dca-bidder-schema-registry:8081
   kcat -b kafka.iad.changes.mediamath.com:9092 -t iad.opto.dba.pacing.1 -o 110055285 -p 0 -c1 -f '%k %s %T\n' -s key=bbbbbs -s value=avro -r https://api-internal-iad.mediamath.com/changes/schema_registry/
-  kcat -b kafka.iad.changes.mediamath.com:9092 -t iad.bidder.impression.1 -s key=bbbbbs -s value=avro -r https://api-internal-iad.mediamath.com/changes/schema_registry/ -f '%k %s %T\n' |  grep "13850897" | jq '{strategy_id: .strategy_id.long, connected_id: .connected_id.string, source_exchange_id: .source_exchange_id.int, bidder_id: .bidder_id.int}' 
+  kcat -b kafka.ord.changes.mediamath.com:9092 -o -1 -t ord.bidder.impression.1 -s value=avro -r https://api-internal-ord.mediamath.com/changes/schema_registry/ -f '{"offset": %o, "partition": %p, "payload": %s}\n' 
+
+  jq '{offset: .offset, partition: .partition, strategy_id: .payload.strategy_id.long, connected_id: .payload.connected_id.string, source_exchange_id: .payload.source_exchange_id.int, bidder_id: .payload.bidder_id.int, bid_timestamp: .payload.bid_timestamp.string, serve_bidder_id: .payload.serve_bidder_id.int, pi: (.payload.brain_pe_internal_data.string | fromjson) | .pi, pic_adj: (.payload.brain_pe_internal_data.string | fromjson) | .pic_adj }'
   ```
 - consume for changes:
   ```
