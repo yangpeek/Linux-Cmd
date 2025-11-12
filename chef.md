@@ -17,6 +17,10 @@
    - knife vault update certificates yytt --clients iad-bidder-x3,iad-bidder-x2 --admins mozek --mode client
    - https://www.dhruvsahni.com/quick-guide-to-chef-vault
    - `--mode client` or upload / download could work.
+   - If the vault can't be shown to the admin, refresh the admin list:
+   ```
+    knife vault update credentials github_key --admins=manghelone,dsiefert,yayang,cdong --mode client
+   ```
 
 3. Chef broken repo cci for kitchen fix:
    - [Example pr](https://github.com/MediaMath/bidmon/pull/42/files)
