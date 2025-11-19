@@ -22,7 +22,12 @@
     knife vault update credentials github_key --admins=manghelone,dsiefert,yayang,cdong --mode client
    ```
 
-3. Chef broken repo cci for kitchen fix:
+3. Chef 500 error
+   - with Knife cmd, confirm the issue.
+   - Change the the endpoint in config `iad-cheffe-x` to verify which one is bad.
+   - jump onto the server try: `chef-server-ctl restart`
+
+5. Chef broken repo cci for kitchen fix:
    - [Example pr](https://github.com/MediaMath/bidmon/pull/42/files)
    - Update `gem install rubocop-ast` for install gems.
    - Update `fetch https://cci-chef.mediamath.com` b/c iad-chef is blocked for cci.
