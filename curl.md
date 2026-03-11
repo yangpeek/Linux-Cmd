@@ -11,3 +11,10 @@ curl-format.txt
                     ----------\n
          time_total:  %{time_total}\n
 ```
+
+- Oauth Token
+  ```
+  # special char in password, use single quote
+  curl -X POST "https://.../oauth/token" -u 'username:password' -d "grant_type=client_credentials"
+  curl -s -H "Authorization: Bearer ..." "https://url"
+  ```
