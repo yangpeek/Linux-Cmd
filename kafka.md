@@ -22,6 +22,8 @@
 - consume for changes:
   ```
   kcat  -b kafka.iad.changes.mediamath.com:9092 -t iad.changes.snapshot.audience-segments.1  -r https://api-internal-iad.mediamath.com/changes/schema_registry/ -p4 -o begenning  -svalue=avro -skey=avro -e -f '%p %o %T %k %s\n'
+  kcat -b kafka.iad.changes.mediamath.com -r https://api-internal-iad.mediamath.com/changes/schema_registry/ -s value=avro -tiad.opto.dba.pacing.1 ( when key is plain text )
+  
   ```
 
 3. Create kafka topic:
